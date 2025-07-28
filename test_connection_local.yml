@@ -1,5 +1,5 @@
 - name: win_ping module dev
-  hosts: windows_server_50
+  hosts: windows
   become: false
   gather_facts: false
   tasks:
