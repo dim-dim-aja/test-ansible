@@ -1,17 +1,12 @@
-# restart_tomcat.yml
-- name: Restart Tomcat on Windows
+- name: Restart Tomcat
   hosts: windows
   tasks:
     - name: Stop Tomcat
-      win_shell: C:\Tomcat9\apache-tomcat-9.0.107\bin\shutdown.bat
-      args:
-        chdir: C:\Tomcat9\apache-tomcat-9.0.107\bin
+      win_shell: 'C:\Tomcat9\apache-tomcat-9.0.107\bin\shutdown.bat'
 
     - name: Wait for 5 seconds
       win_wait_for:
         timeout: 5
 
     - name: Start Tomcat
-      win_shell: C:\Tomcat9\apache-tomcat-9.0.107\bin\startup.bat
-      args:
-        chdir: C:\Tomcat9\apache-tomcat-9.0.107\bin
+      win_shell: 'C:\Tomcat9\apache-tomcat-9.0.107\bin\startup.bat'
