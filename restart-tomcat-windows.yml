@@ -4,8 +4,8 @@
     - name: Stop Tomcat9 service
       win_service:
         name: Apache Tomcat 9.0 Tomcat9
-        state: stop
+        state: stopped
     - name: Start Tomcat9 service
       win_service:
         name: Apache Tomcat 9.0 Tomcat9
-        state: start
+        state: started
