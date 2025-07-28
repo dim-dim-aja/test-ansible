@@ -1,7 +1,11 @@
 - name: Restart Tomcat Windows Service
   hosts: windows
   tasks:
-    - name: Restart Tomcat9 service
+    - name: Stop Tomcat9 service
       win_service:
-        name: Tomcat9
-        state: restarted
+        name: Apache Tomcat 9.0 Tomcat9
+        state: stop
+    - name: Start Tomcat9 service
+      win_service:
+        name: Apache Tomcat 9.0 Tomcat9
+        state: start
